@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-develop
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: agifly
+                operator: In
+                values:
+                - node
+            topologyKey: kubernetes.io/hostname
+      containers:
+      - name: frontend
+        image: devtools.agifly.cloud:5050/agifly-website/agifly-website-frontend:develop
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+      imagePullSecrets:
+        - name: pipeline-frontend-agifly-website-flykube-deployment
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-develop
+spec:
+  ports:
+  - port: 3001
+    nodePort: 31277
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: frontend
+  type: NodePort
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: frontend-develop
+  labels:
+    app: frontend
+    ref: __CI_ENVIRONMENT_SLUG__
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.org/client-max-body-size: "1024m"
+    nginx.ingress.kubernetes.io/proxy-body-size: "1024m"
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/client-body-timeout: "600"
+    certmanager.k8s.io/cluster-issuer: "letsencrypt-prod"
+spec:
+  tls:
+    - hosts:
+      - frontend.develop.agifly.flykube.agifly.cloud
+      secretName: frontend-develop-agifly-flykube-tls-key
+  rules:
+  - host: frontend.develop.agifly.flykube.agifly.cloud
+    http:
+        paths:
+        - backend:
+            service:
+              name: frontend-develop
+              port: 
+                number: 3001
+          path: /
+          pathType: Prefix

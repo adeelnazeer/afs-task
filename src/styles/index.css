@@ -1,0 +1,23 @@
+@import "./CommonColors.css";
+@import "./ProjectVideo.css";
+@import "./fontSize.css";
+@import "./allProjectsCard.css";
+
+/* font family */
+.fnt-brandon-black {
+  font-family: "Brandon Grotesque black";
+}
+.fnt-brandon-bold {
+  font-family: "brandon-bold";
+}
+.fnt-brandon-medium {
+  font-family: "brandon-medium";
+}
+.fnt-brandon-light {
+  font-family: "Brandon Grotesque light";
+}
+/* marign */
+.mt-160px {
+  margin-top: -160px;
+}
+

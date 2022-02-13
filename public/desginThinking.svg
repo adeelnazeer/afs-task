@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="972.976" height="318.013" viewBox="0 0 972.976 318.013">
+  <g id="Schema_scrum_" data-name="Schema scrum " transform="translate(1.831 -6)">
+    <g id="path" transform="translate(0 38)">
+      <path id="Path-2" data-name="Path" d="M0,278.814c31.07,8.122,67.818,7.3,96.563-.814,61.747-17.434,82.148-35.7,105.263-65s31.684-54.832,63.41-80.5c34.991-28.316,97.157-31.187,159.085-24.511,30.336,3.27,128.59,32.5,150.582,35.044,77.407,8.963,104.743-4.154,156.39-20.4,64.747-20.369,70.263-55.819,51.29-89.66S669-20.067,635.277,32.966s48.677,132.622,103.637,132.622,148.615-32.95,192.231-42.962" fill="none" stroke="#002f5a" stroke-linecap="round" stroke-width="3" stroke-dasharray="0 11"/>
+    </g>
+    <text id="Strategy" transform="translate(32.145 266)" fill="#002f5a" font-size="16" font-family="Lato-Bold, Lato" font-weight="700"><tspan x="0" y="16">STRATEGY</tspan></text>
+    <text id="Discovery" transform="translate(403.145 101)" fill="#002f5a" font-size="16" font-family="Lato-Bold, Lato" font-weight="700"><tspan x="0" y="16">DISCOVERY</tspan></text>
+    <text id="Analysis" transform="translate(557.145 210)" fill="#002f5a" font-size="16" font-family="Lato-Bold, Lato" font-weight="700"><tspan x="0" y="16">ANALYSIS</tspan></text>
+    <text id="Design" transform="translate(732.145 6)" fill="#002f5a" font-size="16" font-family="Lato-Bold, Lato" font-weight="700"><tspan x="0" y="16">DESIGN</tspan></text>
+    <text id="Production" transform="translate(859.145 195)" fill="#002f5a" font-size="16" font-family="Lato-Bold, Lato" font-weight="700"><tspan x="0" y="16">PRODUCTION</tspan></text>
+    <g id="forms_triangle_copy_8" data-name="forms/triangle copy 8" transform="matrix(-0.875, 0.485, -0.485, -0.875, 122.394, 298.008)">
+      <rect id="forms_triangle_background" data-name="forms/triangle background" width="12.002" height="12.002" fill="none"/>
+      <path id="Triangle" d="M6,0l6,12H0Z" fill="#eeac56"/>
+    </g>
+    <g id="forms_triangle_copy_10" data-name="forms/triangle copy 10" transform="matrix(0.951, 0.309, -0.309, 0.951, 579.445, 188.606)">
+      <rect id="forms_triangle_background-2" data-name="forms/triangle background" width="12.002" height="12.002" fill="none"/>
+      <path id="Triangle-2" data-name="Triangle" d="M6,0l6,12H0Z" fill="#eeac56"/>
+    </g>
+    <g id="forms_triangle_copy_11" data-name="forms/triangle copy 11" transform="matrix(-0.839, -0.545, 0.545, -0.839, 745.591, 38.689)">
+      <rect id="forms_triangle_background-3" data-name="forms/triangle background" width="12.002" height="12.002" fill="none"/>
+      <path id="Triangle-3" data-name="Triangle" d="M6,0l6,12H0Z" fill="#eeac56"/>
+    </g>
+    <g id="forms_triangle_copy_12" data-name="forms/triangle copy 12" transform="matrix(0.978, -0.208, 0.208, 0.978, 895.737, 176.543)">
+      <rect id="forms_triangle_background-4" data-name="forms/triangle background" width="12.002" height="12.002" fill="none"/>
+      <path id="Triangle-4" data-name="Triangle" d="M6,0l6,12H0Z" fill="#eeac56"/>
+    </g>
+    <g id="forms_triangle_copy_9" data-name="forms/triangle copy 9" transform="matrix(-0.999, 0.035, -0.035, -0.999, 430.476, 137.444)">
+      <rect id="forms_triangle_background-5" data-name="forms/triangle background" width="12.002" height="12.002" fill="none"/>
+      <path id="Triangle-5" data-name="Triangle" d="M6,0l6,12H0Z" fill="#eeac56"/>
+    </g>
+  </g>
+</svg>
