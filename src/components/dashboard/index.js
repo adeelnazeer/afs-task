@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-import React from "react";
+import React, { useState } from "react";
 import Icon from "../../assets/images/home.png";
 import User from "../../assets/images/download.jpg";
 import Card from "../../assets/images/l.jpg";
@@ -9,58 +9,82 @@ import Single from "../../assets/images/single.png";
 import Setting from "../../assets/images/settings.png";
 import Search from "../../assets/images/search.png";
 import Logo from "../../assets/images/lo.png";
+import Close from "../../assets/images/close.png";
+import Right from "../../assets/images/right.png";
 import Bell from "../../assets/images/bell.png";
 import { Dropdown } from "react-dropdown-now";
 import "react-dropdown-now/style.css";
 import "./style.scss";
 
 export default (props) => {
+  const [show, setShow] = useState(false);
   return (
     <div className="main-dashboard">
-      <div className="inner pt-10 pr-10 flex">
-        <div className="w-1/6 h-screen">
-          <div className="pb-32">
-            <div className="  logo mr-6">
-              <img src={Logo} alt="" />
-            </div>
-          </div>
-          <div className=" pl-6">
-            <div className="flex py-2 selected">
-              <div className="px-4">
-                <img src={Icon} alt="" />
-              </div>
-              <div className="pl-4">
-                <h2 className="font-medium">Dashboard</h2>
-              </div>
-            </div>
-          </div>
-          <div className="pt-6 pl-6">
-            <div className="flex py-2  white">
-              <div className="px-4">
-                <img src={Search} alt="" />
-              </div>
-              <div className="pl-4">
-                <h2 className="font-medium">Search</h2>
+      <div className="inner pt-10 lg:pr-10 lg:pl-0 xs:px-4 flex">
+        {show === false && (
+          <div className="lg:w-1/6 xs:w-5/6 h-screen lg:static  xs:fixed  background-green xs:z-10">
+            <div className="pb-32">
+              <div className="  logo mr-6 flex items-center">
+                <img className="logo-img" src={Logo} alt="" />
+                <img
+                  className="w-4 h-4 lg:invisible xs:visible "
+                  src={Close}
+                  alt=""
+                  onClick={() => {
+                    setShow(true);
+                  }}
+                />
               </div>
             </div>
-          </div>
-          <div className="pt-6 pl-6">
-            <div className="flex py-2 white ">
-              <div className="px-4">
-                <img src={Setting} alt="" />
+            <div className=" pl-6">
+              <div className="flex py-2 selected">
+                <div className="px-4">
+                  <img src={Icon} alt="" />
+                </div>
+                <div className="pl-4">
+                  <h2 className="font-medium">Dashboard</h2>
+                </div>
               </div>
-              <div className="pl-4">
-                <h2 className="font-medium">Setting</h2>
+            </div>
+            <div className="pt-6 pl-6">
+              <div className="flex py-2  white">
+                <div className="px-4">
+                  <img src={Search} alt="" />
+                </div>
+                <div className="pl-4">
+                  <h2 className="font-medium">Search</h2>
+                </div>
+              </div>
+            </div>
+            <div className="pt-6 pl-6">
+              <div className="flex py-2 white ">
+                <div className="px-4">
+                  <img src={Setting} alt="" />
+                </div>
+                <div className="pl-4">
+                  <h2 className="font-medium">Setting</h2>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="w-5/6 card-color second-column p-6">
-          <div class="flex ...  items-center">
-            <div class="w-2/5 ..."> </div>
-            <div class="w-3/5 ... flex items-center justify-end">
+        )}
+        <div className="lg:w-5/6 xs:w-full card-color second-column p-6">
+          <div class="flex ...  items-center flex-wrap justify-end ">
+            {show === true && (
+              <div class="w-full ...">
+                <img
+                  className="w-4  lg:invisible xs:visible "
+                  src={Right}
+                  alt=""
+                  onClick={() => {
+                    setShow(false);
+                  }}
+                />
+              </div>
+            )}
+            <div class="lg:w-3/5 xs:w-full ... flex items-center justify-end">
               <div>
-                <input className="w-80 pt-2" />
+                <input className="lg:w-80 xs:w-full pt-2" />
               </div>
               <div className="px-6">
                 <img src={Bell} alt="" />
@@ -70,7 +94,7 @@ export default (props) => {
               </div>
             </div>
           </div>
-          <div className="flex drop-down-main">
+          <div className="flex drop-down-main flex-wrap mt-4">
             <Dropdown
               placeholder="Select an option"
               className="my-className first"
@@ -83,7 +107,7 @@ export default (props) => {
               }
               onOpen={() => console.log("open!")}
             />
-            <div class="vl"></div>
+            <div class="vl xs:invisible lg:visible"></div>
             <Dropdown
               placeholder="Select an option"
               className="my-className other"
@@ -96,7 +120,7 @@ export default (props) => {
               }
               onOpen={() => console.log("open!")}
             />
-            <div class="vl"></div>
+            <div class="vl xs:invisible lg:visible"></div>
             <Dropdown
               placeholder="Select an option"
               className="my-className other"
@@ -109,7 +133,7 @@ export default (props) => {
               }
               onOpen={() => console.log("open!")}
             />
-            <div class="vl"></div>
+            <div class="vl xs:invisible lg:visible"></div>
             <Dropdown
               placeholder="Select an option"
               className="my-className other"
@@ -122,7 +146,7 @@ export default (props) => {
               }
               onOpen={() => console.log("open!")}
             />
-            <div class="vl"></div>
+            <div class="vl xs:invisible lg:visible"></div>
             <Dropdown
               placeholder="Select an option "
               className="my-className other"
@@ -140,8 +164,8 @@ export default (props) => {
             <h1 className="orange text-left text-2xl font-semibold">
               General Report
             </h1>
-            <div class="flex ... pt-8 justify-around">
-              <div class="w-1/6 p-4 ... shadow-lg shadow-indigo-500/40 clr-green border-r-10">
+            <div class="flex ... pt-8 justify-around flex-wrap">
+              <div class="lg:w-1/6 xs:w-full p-4 ... shadow-lg shadow-indigo-500/40 clr-green border-r-10">
                 <img className="card-image pt-2" src={Card} alt="" />
                 <p className="pt-2">Hair saloon</p>
                 <div className="flex items-center justify-center">
@@ -151,7 +175,7 @@ export default (props) => {
                   </div>
                 </div>
               </div>
-              <div class="w-1/6 p-4 ... shadow-lg shadow-indigo-500/40 border-r-10">
+              <div class="lg:w-1/6 xs:w-full p-4 ... shadow-lg shadow-indigo-500/40 border-r-10">
                 <img className="card-image pt-2" src={Card} alt="" />
                 <p className="pt-2 clr-green">Hair saloon</p>
                 <div className="flex items-center justify-center">
@@ -161,7 +185,7 @@ export default (props) => {
                   </div>
                 </div>
               </div>
-              <div class="w-1/6 p-4 ... shadow-lg shadow-indigo-500/40 clr-green border-r-10">
+              <div class="lg:w-1/6 xs:w-full p-4 ... shadow-lg shadow-indigo-500/40 clr-green border-r-10">
                 <img className="card-image pt-2" src={Card} alt="" />
                 <p className="pt-2">Hair saloon</p>
                 <div className="flex items-center justify-center">
@@ -171,7 +195,7 @@ export default (props) => {
                   </div>
                 </div>
               </div>
-              <div class="w-1/6 p-4 ... shadow-lg shadow-indigo-500/40 clr-green border-r-10">
+              <div class="lg:w-1/6 xs:w-full p-4 ... shadow-lg shadow-indigo-500/40 clr-green border-r-10">
                 <img className="card-image pt-2" src={Card} alt="" />
                 <p className="pt-2">Hair saloon</p>
                 <div className="flex items-center justify-center">

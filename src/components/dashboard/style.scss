@@ -5,10 +5,10 @@
       background-color: #fff;
       border-top-right-radius: 50px;
       border-bottom-right-radius: 50px;
-      img {
+      justify-content: space-evenly;
+      .logo-img {
         height: 50px;
         width: 160px;
-        margin: auto;
       }
     }
     .selected {
