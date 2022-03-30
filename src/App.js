@@ -1,12 +1,12 @@
 import React from "react";
 import "./styles/index.css";
 import "./App.css";
-import Dashboard from "./components/dashboard";
+import Nadra from "./components/dashboard/nadra";
 
 function App() {
   return (
     <div className="App">
-      <Dashboard />
+      <Nadra />
     </div>
   );
 }
